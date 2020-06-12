@@ -1,0 +1,26 @@
+language: python
+
+branches:
+  only:
+  - master
+  - feature/travis-ci_support
+
+script:
+- echo "skipping tests"
+
+deploy:
+  - provider: pypi
+    user: "__token__"
+    password:
+      secure: "ANcr+5xE1qm73mkyz6DNRLNlgROyhQlA/qNbvsDEFGRsJbrMbJnFBXCSQHPVyD5YMx2NPDAGO4QzMBnCxewreyl9lc+D3kDCX3Kda84EUlfOLrJ1Jbvh10wsc1F15UAmlgsgKDptflcmLSe2GljqB7pbQYfmUIx1+7yHR9VxwIzZaXPW8nj6tkV9pyCTC/8/s70Uz0O33J2BOFzFOstu9fmVDR0np69EJ1DfhZU2s6XuR9E9USPCCkSFFbWCHz2rw0P4zVmmNzYIPcjjStqNNrWD1JKwK8nJGWmtff8LHEFbpj5WKQvG8yA2N/5vGQUTypXKXRkCFPO41w45mP/7Fqp/FPpTxsoeH/hKdOCbD3q56Fy824zxTE7XjlcktuTqbGsBREMOSRNu67w1zJpqPUToaTgdmiZBH0nH/CRVWY/5ydIE6h1h75G+StU38XGhY/RdCHEmXoJ2sqzxfbOKrI9NP0hbMJiVL7oMTImhFUxiktHa++qCHWw8wnkaSzP5cxVgSmMedzp3zf/eJLorK3hqWmunDF9cV7ftrIo/RFj6LmtCJZ84MBMNSFBFxiJo5vwiZqCJNGbOf83uwaz4OgFm06XS335kH6C+yxSf8MAYdFrrOzHZdoraPLYnCMKUkpPt7m9A8ugo/NVIb0hjqAsFz0NObssMA77lHa/TIMA="
+    skip_existing: true
+    on:
+      branch: master
+
+  - provider: pypi
+    user: "__token__"
+    password:
+      secure: "ANcr+5xE1qm73mkyz6DNRLNlgROyhQlA/qNbvsDEFGRsJbrMbJnFBXCSQHPVyD5YMx2NPDAGO4QzMBnCxewreyl9lc+D3kDCX3Kda84EUlfOLrJ1Jbvh10wsc1F15UAmlgsgKDptflcmLSe2GljqB7pbQYfmUIx1+7yHR9VxwIzZaXPW8nj6tkV9pyCTC/8/s70Uz0O33J2BOFzFOstu9fmVDR0np69EJ1DfhZU2s6XuR9E9USPCCkSFFbWCHz2rw0P4zVmmNzYIPcjjStqNNrWD1JKwK8nJGWmtff8LHEFbpj5WKQvG8yA2N/5vGQUTypXKXRkCFPO41w45mP/7Fqp/FPpTxsoeH/hKdOCbD3q56Fy824zxTE7XjlcktuTqbGsBREMOSRNu67w1zJpqPUToaTgdmiZBH0nH/CRVWY/5ydIE6h1h75G+StU38XGhY/RdCHEmXoJ2sqzxfbOKrI9NP0hbMJiVL7oMTImhFUxiktHa++qCHWw8wnkaSzP5cxVgSmMedzp3zf/eJLorK3hqWmunDF9cV7ftrIo/RFj6LmtCJZ84MBMNSFBFxiJo5vwiZqCJNGbOf83uwaz4OgFm06XS335kH6C+yxSf8MAYdFrrOzHZdoraPLYnCMKUkpPt7m9A8ugo/NVIb0hjqAsFz0NObssMA77lHa/TIMA="
+    skip_existing: true
+    on:
+      branch: feature/travis-ci_support

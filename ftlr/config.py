@@ -1,16 +1,16 @@
 from typing import Dict, Iterable, Tuple, Type
 
-from xmp_types import XmpType, Factory
-from xmp import Xmp
+from ftlr.xmp_types import XmpType, Factory
+from ftlr.xmp import Xmp
 
-__xmp_type_factory = Factory.instance()
+__types = Factory.instance()
 
 __dict_mapping = {
     "x:xmpmeta": {
         "rdf:RDF": {
             "rdf:Description": {
-                "@crs:ColorNoiseReduction": ("noise_reduction", __xmp_type_factory.integer(), int),
-                "@crs:Exposure2012": ("exposure", __xmp_type_factory.real(), float),
+                "@crs:Exposure2012": ("exposure", __types.real(), float),
+                "@crs:Contrast2012": ("contrast", __types.integer(), int)
             },
         },
     },

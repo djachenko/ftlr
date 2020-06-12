@@ -1,26 +1,26 @@
 from abc import abstractmethod
 from functools import lru_cache
 
-VT = float
+ValueType = float
 
 
 class XmpType:
     @abstractmethod
-    def from_string(self, value: str) -> VT:
+    def from_string(self, value: str) -> ValueType:
         pass
 
     @abstractmethod
-    def to_string(self, value: VT) -> str:
+    def to_string(self, value: ValueType) -> str:
         pass
 
 
 class XmpReal(XmpType):
-    def from_string(self, value: str) -> VT:
+    def from_string(self, value: str) -> ValueType:
         float_value = float(value)
 
         return float_value
 
-    def to_string(self, value: VT) -> str:
+    def to_string(self, value: ValueType) -> str:
         modifier = "+" if value > 0 else "-"
 
         value = round(value, ndigits=2)
@@ -29,12 +29,12 @@ class XmpReal(XmpType):
 
 
 class XmpInteger(XmpType):
-    def from_string(self, value: str) -> VT:
+    def from_string(self, value: str) -> ValueType:
         float_value = int(value)
 
         return float_value
 
-    def to_string(self, value: VT) -> str:
+    def to_string(self, value: ValueType) -> str:
         modifier = "+" if value > 0 else "-"
 
         value = int(round(value))

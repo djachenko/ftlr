@@ -1,1 +1,3 @@
-ftlr
+# ftlr
+
+Usage: `~$ ftlr [--exposure EXPOSURE]`

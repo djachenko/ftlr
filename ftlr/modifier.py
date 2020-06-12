@@ -1,16 +1,21 @@
 from typing import List
 
-from xmp_types import XmpType, VT
-from xmp import Xmp
+from ftlr.xmp_types import XmpType, ValueType
+from ftlr.xmp import Xmp
 
 
 class Modification:
-    def __init__(self, path: str, xmp_type: XmpType, value: VT) -> None:
-        super().__init__()
+    def __init__(self, path: str, xmp_type: XmpType, value: ValueType) -> None:
+        assert path is not None
+        assert xmp_type is not None
+        assert value is not None
 
         self.path = path
         self.xmp_type = xmp_type
         self.value = value
+
+    def __hash__(self):
+        return hash(self.path)
 
     def __eq__(self, o: object) -> bool:
         if not isinstance(o, Modification):
