@@ -1,11 +1,30 @@
 [build-system]
-# XXX: If your project needs other packages to build properly, add them to this list.
-requires = ["setuptools >= 64"]
+requires = ["setuptools>=77.0.3"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "ftlr"
-version = "0.0.1"
+version = "0.1.0"
+description = ""
+readme = "README.md"
+license = "MIT"
+authors = [{ name = "Igor Djachenko" }]
+requires-python = ">=3.10"
 
-[project.scripts]
-ftlr = "ftlr.runner:run"
+[project.optional-dependencies]
+test = ["pytest", "ruff", "mypy"]
+release = ["build", "python-semantic-release"]
+
+[project.urls]
+Homepage = "https://github.com/djachenko/ftlr"
+Repository = "https://github.com/djachenko/ftlr"
+Issues = "https://github.com/djachenko/ftlr/issues"
+
+[tool.semantic_release]
+version_toml = ["pyproject.toml:project.version"]
+branch = "master"
+build_command = "pip install build && python -m build"
+changelog_file = "CHANGELOG.md"
+commit_message = "chore(release): v{version} [no ci]"
+major_on_zero = false
+allow_zero_version = true
