@@ -1,5 +1,5 @@
 from abc import abstractmethod
-from functools import lru_cache, cache
+from functools import cache
 from typing import Type, Self
 
 ValueType = float | int

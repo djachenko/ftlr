@@ -1,16 +1,15 @@
 from dataclasses import dataclass
 from functools import cache
-from pathlib import Path
-from typing import Dict, Iterable, List
+from typing import List
 
-from ftlr.modifier import Modification
+from ftlr.modification import Modification
 from ftlr.xmp_types import XmpType, Factory
 
 __types = Factory.instance()
 
 __descriptions = [
-    ("crs:Exposure2012", "exposure", __types.real()),
-    ("crs:Contrast2012", "contrast", __types.integer())
+    ("crs:Exposure2012", "exposure", __types.real(), -5, 5),
+    ("crs:Contrast2012", "contrast", __types.integer(), -100, 100)
 ]
 
 
@@ -19,6 +18,8 @@ class Config:
     key: str
     name: str
     type: XmpType
+    min: float
+    max: float
 
     @property
     @cache

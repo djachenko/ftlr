@@ -3,7 +3,7 @@ from glob import iglob
 from pathlib import Path
 
 from ftlr import config
-from ftlr.modifier import Modification
+from ftlr.modification import Modification
 from ftlr.xmp import Xmp
 
 
@@ -18,7 +18,7 @@ def run():
     # parser.add_argument("pattern", type=Path, nargs="?", default=Path.cwd() / "*")
     parser.add_argument("pattern", nargs="?", default="*")
 
-    namespace = parser.parse_args("-e -1.5 ../../25.*/*2123.xmp".split())
+    namespace = parser.parse_args("-e -1.5 ../../25.*/*.xmp".split())
 
     modifications = [mod for mod in vars(namespace).values() if isinstance(mod, Modification)]
 
@@ -30,6 +30,10 @@ def run():
         with Xmp.read(path) as xmp:
             for modification in modifications:
                 modification.apply(xmp)
+
+                # if error:
+
+
 
 if __name__ == '__main__':
     run()

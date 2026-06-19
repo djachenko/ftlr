@@ -2,8 +2,6 @@ from contextlib import contextmanager
 from pathlib import Path
 from typing import Any, Generator, Self, List
 
-import xmltodict
-
 
 # todo: add context management
 class Xmp:
