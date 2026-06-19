@@ -1,6 +1,6 @@
 from abc import abstractmethod
 from functools import cache
-from typing import Type, Self
+from typing import Type
 
 ValueType = float | int
 
