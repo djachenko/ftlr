@@ -2,9 +2,6 @@ from ftlr.xmp_types import Factory
 
 __types = Factory.instance()
 
-# Можно выполнять любые вычисления на Python
-import math
-import random
 
 def calculate_optimal_exposure():
     """Вычисляет оптимальную экспозицию на основе статистики"""
@@ -63,9 +60,7 @@ __dict_mapping = {
                 "@crs:BlueHue": ("blue-hue", __types.integer(), int),
                 "@crs:BlueSaturation": ("blue-saturation", __types.integer(), int),
                 
-                # Автоматически вычисленные значения
-                "@crs:Exposure2012": ("auto-exposure", __types.real(), float),
-                "@crs:Contrast2012": ("auto-contrast", __types.integer(), int),
+
             },
         },
     },
