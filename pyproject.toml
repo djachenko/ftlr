@@ -10,6 +10,10 @@ readme = "README.md"
 license = "MIT"
 authors = [{ name = "Igor Djachenko" }]
 requires-python = ">=3.10"
+dependencies = ["xmltodict"]
+
+[project.scripts]
+ftlr = "ftlr.runner:run"
 
 [project.optional-dependencies]
 test = ["pytest", "ruff", "mypy"]
@@ -19,6 +23,9 @@ release = ["build", "python-semantic-release"]
 Homepage = "https://github.com/djachenko/ftlr"
 Repository = "https://github.com/djachenko/ftlr"
 Issues = "https://github.com/djachenko/ftlr/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
 
 [tool.semantic_release]
 version_toml = ["pyproject.toml:project.version"]
