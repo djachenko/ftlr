@@ -1,6 +1,4 @@
 from dataclasses import dataclass
-from pathlib import Path
-from typing import List
 
 from ftlr.xmp_types import XmpType, ValueType
 from ftlr.xmp import Xmp
