@@ -10,3 +10,5 @@ venv/
 build/
 
 ftlr.egg-info/
+
+*.NEF
