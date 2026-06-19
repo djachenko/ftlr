@@ -14,7 +14,7 @@ class Xmp:
         self.__lines = lines
 
     @staticmethod
-    def __value(s: str) -> (str, str):
+    def __value(s: str) -> str:
         s = s.strip()
 
         key, value = s.split("=")

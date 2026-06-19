@@ -54,7 +54,7 @@ class Factory:
 
     @classmethod
     @cache
-    def instance(cls) -> Self:
+    def instance(cls) -> "Factory":
         return Factory()
 
     @cache
