@@ -16,13 +16,16 @@ dependencies = ["xmltodict"]
 ftlr = "ftlr.runner:run"
 
 [project.optional-dependencies]
-test = ["pytest", "ruff", "mypy"]
+test = ["pytest", "ruff", "mypy", "types-xmltodict"]
 release = ["build", "python-semantic-release"]
 
 [project.urls]
 Homepage = "https://github.com/djachenko/ftlr"
 Repository = "https://github.com/djachenko/ftlr"
 Issues = "https://github.com/djachenko/ftlr/issues"
+
+[tool.mypy]
+exclude = ["src/ftlr/config_bak\\.py"]
 
 [tool.setuptools.packages.find]
 where = ["src"]
