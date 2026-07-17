@@ -1,9 +1,7 @@
 from dataclasses import dataclass
-from functools import cache
-from typing import List
 
 from ftlr.modification import Modification
-from ftlr.xmp_types import XmpType, Factory
+from ftlr.xmp_types import XmpType, Factory, ValueType
 
 __types = Factory.instance()
 
@@ -21,28 +19,8 @@ class Config:
     min: float
     max: float
 
-    @property
-    @cache
-    def args(self) -> List[str]:
-        short_name = f"-{self.name[0]}"
-        long_name = f"--{self.name}"
-
-        return [
-            short_name,
-            long_name,
-        ]
-
-    @property
-    @cache
-    def kwargs(self):
-        return {
-            "type": self.build_modification
-        }
-
-    def build_modification(self, value: str) -> Modification:
-        assert value.startswith("+") or value.startswith("-")
-
-        return Modification(self.key, self.type, self.type.python_type(value))
+    def build_modification(self, value: ValueType) -> Modification:
+        return Modification(self.key, self.type, value, self.min, self.max)
 
 
 CONFIG = [Config(*desc) for desc in __descriptions]
