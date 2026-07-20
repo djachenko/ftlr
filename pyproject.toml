@@ -10,13 +10,13 @@ readme = "README.md"
 license = "MIT"
 authors = [{ name = "Igor Djachenko" }]
 requires-python = ">=3.10"
-dependencies = ["xmltodict"]
+dependencies = ["typer"]
 
 [project.scripts]
-ftlr = "ftlr.runner:run"
+ftlr = "ftlr.runner:app"
 
 [project.optional-dependencies]
-test = ["pytest", "ruff", "mypy", "types-xmltodict"]
+test = ["pytest", "ruff", "mypy"]
 release = ["build", "python-semantic-release"]
 
 [project.urls]

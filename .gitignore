@@ -12,6 +12,6 @@ build/
 ftlr.egg-info/
 
 *.NEF
-
 _claude
+.repokit
 CLAUDE.local.md

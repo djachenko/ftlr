@@ -1,6 +1,6 @@
 from contextlib import contextmanager
 from pathlib import Path
-from typing import Any, Generator, Self, List
+from typing import Any, Generator, List
 
 
 # todo: add context management
@@ -49,7 +49,7 @@ class Xmp:
 
     @classmethod
     @contextmanager
-    def read(cls, path: Path) -> Generator[Self, Any, None]:
+    def read(cls, path: Path) -> Generator["Xmp", Any, None]:
         with path.open() as xmp_file:
             lines = xmp_file.readlines()
 
